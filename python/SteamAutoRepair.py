@@ -25,7 +25,7 @@ def normalize_name(name: str) -> str:
     """Normalize game names for fuzzy matching"""
     normalized = name.upper()
     normalized = re.sub(r'\s', '', normalized)
-    normalized = re.sub(r'[-_:.,()]', '', normalized)
+    normalized = re.sub(r'[^A-Z0-9]', '', normalized)
     return normalized
 
 def get_directory_size(path: str) -> int:
